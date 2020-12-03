@@ -11,7 +11,7 @@ ScriptedImporter:
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapsPreserveCoverage: 0
@@ -160,8 +160,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 3852
-      y: 199
+      x: 3909
+      y: 243
       width: 49
       height: 49
     spriteID: cf573404986964145a17dc563a7777ff
@@ -174,7 +174,95 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1901, y: -1210}
+    uvTransform: {x: 1958, y: -1166}
+  - name: healthbar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 29, y: 11, z: 22, w: 11}
+    rect:
+      serializedVersion: 2
+      x: 312
+      y: 2172
+      width: 906
+      height: 54
+    spriteID: f3dac582042156442b6cef75c688cc4d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 207, y: 162}
+  - name: heart
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3909
+      y: 173
+      width: 59
+      height: 62
+    spriteID: 8e1dbb538752c5e4f988bef99d77cebb
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1876, y: -1236}
+  - name: key
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3909
+      y: 4
+      width: 75
+      height: 90
+    spriteID: 180c7a7dde37fa2438c65816ed97cd80
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2032, y: -1390}
+  - name: equipmentSlotEmpty
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3909
+      y: 102
+      width: 63
+      height: 63
+    spriteID: 51bdf05d09d75e742a643888c2456c28
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1799, y: -1300}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -208,13 +296,41 @@ ScriptedImporter:
     spriteID: eba27386bb75c2c4f993800784c1e345
     layerID: 2
     mosaicPosition: {x: 4, y: 2172}
+  - name: key
+    spriteName: key
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 180c7a7dde37fa2438c65816ed97cd80
+    layerID: 11
+    mosaicPosition: {x: 3909, y: 4}
+  - name: equipmentSlotEmpty
+    spriteName: equipmentSlotEmpty
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 51bdf05d09d75e742a643888c2456c28
+    layerID: 9
+    mosaicPosition: {x: 3909, y: 102}
+  - name: heart
+    spriteName: heart
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8e1dbb538752c5e4f988bef99d77cebb
+    layerID: 8
+    mosaicPosition: {x: 3909, y: 173}
+  - name: healthbar
+    spriteName: healthbar
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f3dac582042156442b6cef75c688cc4d
+    layerID: 7
+    mosaicPosition: {x: 312, y: 2172}
   - name: Coin
     spriteName: Coin
     isGroup: 0
     parentIndex: -1
     spriteID: cf573404986964145a17dc563a7777ff
     layerID: 4
-    mosaicPosition: {x: 3852, y: 199}
+    mosaicPosition: {x: 3909, y: 243}
   - name: Background
     spriteName: Background
     isGroup: 0
