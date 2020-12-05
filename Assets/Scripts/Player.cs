@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewPlayer : PhysicsObject
+public class Player : PhysicsObject
 {
     const string HorizontalKey = "Horizontal";
     const string JumpKey = "Jump";
@@ -16,6 +16,15 @@ public class NewPlayer : PhysicsObject
     [SerializeField] private Image healthBar;
     private Vector2 healthBarOrigSize;
     public InventoryManager inventory;
+
+    private static Player _instance;
+    public static Player Instance 
+    {
+        get {
+            if (_instance == null) _instance = FindObjectOfType<Player>();
+            return _instance;
+        }
+    }
 
 
     // Start is called before the first frame update
