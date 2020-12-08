@@ -139,7 +139,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 3852
-      y: 4
+      y: 198
       width: 49
       height: 187
     spriteID: d3809a8a9f67ca446bba478566032f71
@@ -152,7 +152,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 2055, y: -1272}
+    uvTransform: {x: 2055, y: -1078}
   - name: Coin
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -160,8 +160,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 3909
-      y: 243
+      x: 3852
+      y: 491
       width: 49
       height: 49
     spriteID: cf573404986964145a17dc563a7777ff
@@ -174,7 +174,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1958, y: -1166}
+    uvTransform: {x: 1901, y: -918}
   - name: healthbar
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -205,7 +205,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 3909
-      y: 173
+      y: 269
       width: 59
       height: 62
     spriteID: 8e1dbb538752c5e4f988bef99d77cebb
@@ -218,7 +218,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1876, y: -1236}
+    uvTransform: {x: 1876, y: -1140}
   - name: key
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -226,8 +226,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 3909
-      y: 4
+      x: 3852
+      y: 393
       width: 75
       height: 90
     spriteID: 180c7a7dde37fa2438c65816ed97cd80
@@ -240,7 +240,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 2032, y: -1390}
+    uvTransform: {x: 1975, y: -1001}
   - name: equipmentSlotEmpty
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -249,7 +249,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 3909
-      y: 102
+      y: 198
       width: 63
       height: 63
     spriteID: 51bdf05d09d75e742a643888c2456c28
@@ -262,7 +262,29 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1799, y: -1300}
+    uvTransform: {x: 1799, y: -1204}
+  - name: enemy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3852
+      y: 4
+      width: 123
+      height: 186
+    spriteID: e725820f91847bc448f40eb8d7cd4e09
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2241, y: -1271}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -288,7 +310,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: d3809a8a9f67ca446bba478566032f71
     layerID: 3
-    mosaicPosition: {x: 3852, y: 4}
+    mosaicPosition: {x: 3852, y: 198}
   - name: ground1
     spriteName: ground1
     isGroup: 0
@@ -302,21 +324,28 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 180c7a7dde37fa2438c65816ed97cd80
     layerID: 11
-    mosaicPosition: {x: 3909, y: 4}
+    mosaicPosition: {x: 3852, y: 393}
+  - name: enemy
+    spriteName: enemy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e725820f91847bc448f40eb8d7cd4e09
+    layerID: 13
+    mosaicPosition: {x: 3852, y: 4}
   - name: equipmentSlotEmpty
     spriteName: equipmentSlotEmpty
     isGroup: 0
     parentIndex: -1
     spriteID: 51bdf05d09d75e742a643888c2456c28
     layerID: 9
-    mosaicPosition: {x: 3909, y: 102}
+    mosaicPosition: {x: 3909, y: 198}
   - name: heart
     spriteName: heart
     isGroup: 0
     parentIndex: -1
     spriteID: 8e1dbb538752c5e4f988bef99d77cebb
     layerID: 8
-    mosaicPosition: {x: 3909, y: 173}
+    mosaicPosition: {x: 3909, y: 269}
   - name: healthbar
     spriteName: healthbar
     isGroup: 0
@@ -330,7 +359,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: cf573404986964145a17dc563a7777ff
     layerID: 4
-    mosaicPosition: {x: 3909, y: 243}
+    mosaicPosition: {x: 3852, y: 491}
   - name: Background
     spriteName: Background
     isGroup: 0

@@ -8,7 +8,7 @@ public class Player : PhysicsObject
     const string HorizontalKey = "Horizontal";
     const string JumpKey = "Jump";
     const int maxHealth = 100;
-    private int currentHealth = 10;
+    private int currentHealth = 50;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 10f;
     public int coins;
@@ -62,6 +62,16 @@ public class Player : PhysicsObject
             this.currentHealth += 15;
             UpdateHealthUI();
         }        
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+        }
+        UpdateHealthUI();
     }
 
     private void UpdateHealthUI()
