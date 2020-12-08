@@ -16,7 +16,7 @@ public class Enemy : PhysicsObject
     // Update is called once per frame
     void Update()
     {  
-        if(CheckIfGroundExists())
+        if(CheckIfGroundNotExists())
         {
             ReverseDirection();
         }
@@ -33,7 +33,7 @@ public class Enemy : PhysicsObject
         direction *= -1;
     }
 
-    private bool CheckIfGroundExists()
+    private bool CheckIfGroundNotExists()
     {
         RaycastHit2D raycastHit = CalcRaycast(direction * raycastOffset, Vector2.down);
         return raycastHit.collider == null;
