@@ -5,3 +5,4 @@ Platformer Prototype produced during Full Time Game Dev course with some improve
 Some refactors: 
 
 - EnemyOriginal.cs -> Enemy.cs -> Refactored the use of raycast sensor code
+- InventoryManager -> Removed all inventory attributes and logic from Player script
