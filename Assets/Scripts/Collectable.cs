@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public enum ItemType {  Coin, Ammo, Health, Inventory }
+public enum ItemType { Coin, Ammo, Health, Inventory }
 
 public class Collectable : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class Collectable : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {        
+    {
         if (Player.Instance.gameObject == collision.gameObject)
         {
             Player player = Player.Instance;
@@ -24,15 +24,16 @@ public class Collectable : MonoBehaviour
                 player.AddHeart();
                 Destroy(gameObject);
             }
-            else if (ItemType.Inventory.Equals(this.itemType)){
-                bool collected = player.inventory.AddItem(this);
+            else if (ItemType.Inventory.Equals(this.itemType))
+            {
+                bool collected = GameManager.Instance.AddItem(this);
                 if (collected)
                 {
                     gameObject.SetActive(false);
                 }
             }
-            
+
         }
     }
-    
+
 }

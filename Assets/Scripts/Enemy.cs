@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class Enemy : PhysicsObject
 {
-
+    [Header("Attributes")]
     [SerializeField] private float speed = 1;
+    [SerializeField] private int attackPower = 10;
+    public int health = 100;
+
+    //Raycast help to check if the enemy is about to hit a wall or fall
+    [Header("Raycast Sensor")]
+    //offset relative to center of object therefore we can predict a hit
     [SerializeField] private int raycastOffset = 1;
     [SerializeField] private int raycastLength = 1;
+    //layers that raycast will interact with
     [SerializeField] private LayerMask layerMaskIgnore;
-    [SerializeField] private int attackPower = 10;
-    [SerializeField] private bool projectRay =false;
+    //Case necessary, projects a visual ray to check the reach
+    [SerializeField] private bool projectRay = false;
+    //Current X direction Right=1 Left=-1
     private int direction = 1;
 
     // Update is called once per frame
     void Update()
-    {  
-        if(CheckIfGroundNotExists())
+    {
+        if (CheckIfGroundNotExists())
         {
             ReverseDirection();
         }
@@ -41,7 +49,8 @@ public class Enemy : PhysicsObject
 
     private bool CheckIfWallExists()
     {
-        RaycastHit2D raycastHit = CalcRaycast(0, new Vector2(direction,0));
+        //offset=0 because the ray is pointing directly to sides
+        RaycastHit2D raycastHit = CalcRaycast(0, new Vector2(direction, 0));
         return raycastHit.collider != null;
     }
 
@@ -50,7 +59,7 @@ public class Enemy : PhysicsObject
         Vector2 origin = new Vector2(transform.position.x + xOffset, transform.position.y);
         if (projectRay)
         {
-            Debug.DrawRay(origin , rayDirection * raycastLength, Color.red);
+            Debug.DrawRay(origin, rayDirection * raycastLength, Color.red);
         }
         return Physics2D.Raycast(origin, rayDirection, raycastLength, layerMaskIgnore);
     }
@@ -60,6 +69,15 @@ public class Enemy : PhysicsObject
         if (collision.gameObject == Player.Instance.gameObject)
         {
             Player.Instance.TakeDamage(attackPower);
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 

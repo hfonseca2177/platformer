@@ -8,10 +8,10 @@ public class Gate : MonoBehaviour
     {
         if (Player.Instance.gameObject == collision.gameObject)
         {
-            Player player = Player.Instance;
-            if (player.inventory.HasInventoryItem(openenerKey.name)){
-                Collectable key = player.inventory.RetrieveItem(openenerKey.name);
-                player.inventory.RemoveItem(key);
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager.HasInventoryItem(openenerKey.name)){
+                Collectable key = gameManager.RetrieveItem(openenerKey.name);
+                gameManager.RemoveItem(key);
                 Destroy(gameObject);
             }
         }

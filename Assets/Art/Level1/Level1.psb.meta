@@ -285,6 +285,28 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 2241, y: -1271}
+  - name: Pixel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3909
+      y: 339
+      width: 12
+      height: 12
+    spriteID: 2cb91739d0589ad4986c55eac5a0a40c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1709, y: -1092}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -325,6 +347,13 @@ ScriptedImporter:
     spriteID: 180c7a7dde37fa2438c65816ed97cd80
     layerID: 11
     mosaicPosition: {x: 3852, y: 393}
+  - name: Pixel
+    spriteName: Pixel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2cb91739d0589ad4986c55eac5a0a40c
+    layerID: 14
+    mosaicPosition: {x: 3909, y: 339}
   - name: enemy
     spriteName: enemy
     isGroup: 0
