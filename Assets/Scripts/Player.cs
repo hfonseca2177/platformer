@@ -68,6 +68,7 @@ public class Player : PhysicsObject
         }
         if (Input.GetButtonDown("Fire1"))
         {
+            animator.SetTrigger("attack");
             StartCoroutine(ActivateAttack());
         }
 
