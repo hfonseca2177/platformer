@@ -9,7 +9,7 @@ public class Player : PhysicsObject
     const string JumpKey = "Jump";
 
     [Header("Attributes")]
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float maxSpeed = 5f;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float attackDuration = 0.5f;
     const int maxHealth = 100;
@@ -19,7 +19,7 @@ public class Player : PhysicsObject
 
     [Header("References")]
     [SerializeField] private GameObject attackBox;
-
+    [SerializeField] private Animator animator;
     //Singleton Instantiation
     private static Player instance;
     private const string instanceName = "Player Ref";
@@ -52,7 +52,7 @@ public class Player : PhysicsObject
     // Update is called once per frame
     void Update()
     {
-        targetVelocity = new Vector2(Input.GetAxis(HorizontalKey) * speed, 0);
+        targetVelocity = new Vector2(Input.GetAxis(HorizontalKey) * maxSpeed, 0);
         if (Input.GetButton(JumpKey) && grounded)
         {
             velocity.y = jumpForce;
@@ -70,6 +70,11 @@ public class Player : PhysicsObject
         {
             StartCoroutine(ActivateAttack());
         }
+
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        animator.SetFloat("velocityY", velocity.y);
+        animator.SetBool("grounded", grounded);
+
     }
 
     public IEnumerator ActivateAttack()
