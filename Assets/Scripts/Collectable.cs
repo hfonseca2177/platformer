@@ -7,6 +7,8 @@ public class Collectable : MonoBehaviour
 
     [SerializeField] private ItemType itemType;
     [SerializeField] private string itemName;
+    [SerializeField] private AudioClip collectedSound;
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,8 +34,13 @@ public class Collectable : MonoBehaviour
                     gameObject.SetActive(false);
                 }
             }
-
+            PlayCollectedSound();
         }
+    }
+
+    private void PlayCollectedSound()
+    {
+        GameManager.Instance.PlaySFX(collectedSound, 0.2f);
     }
 
 }

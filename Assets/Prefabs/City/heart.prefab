@@ -124,3 +124,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   itemName: 
+  sfxAudioSource: {fileID: 6441570076460110750, guid: 85b6d9d1bd7335c44bb140330663532d,
+    type: 3}
+  collectedSound: {fileID: 8300000, guid: 47c978b4408724c41b470d3f2669344b, type: 3}

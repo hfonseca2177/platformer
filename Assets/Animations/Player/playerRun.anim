@@ -1742,4 +1742,12 @@ AnimationClip:
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: PlayStep
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 3567fe6fdd0c670428b205375491265c,
+      type: 3}
+    floatParameter: 0.8
+    intParameter: 0
+    messageOptions: 0

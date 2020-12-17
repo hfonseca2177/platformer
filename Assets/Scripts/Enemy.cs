@@ -13,13 +13,18 @@ public class Enemy : PhysicsObject
     [Header("Raycast Sensor")]
     //offset relative to center of object therefore we can predict a hit
     [SerializeField] private int raycastOffset = 1;
-    [SerializeField] private int raycastLength = 1;
+    [SerializeField] private float raycastLength = 0.5f;
     //layers that raycast will interact with
     [SerializeField] private LayerMask layerMaskIgnore;
     //Case necessary, projects a visual ray to check the reach
-    [SerializeField] private bool projectRay = false;
+    [SerializeField] private bool projectRay = true;
     //Current X direction Right=1 Left=-1
     private int direction = 1;
+
+    [Header("SoundFX")]    
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private Animator animator;
 
     // Update is called once per frame
     void Update()
@@ -75,10 +80,23 @@ public class Enemy : PhysicsObject
     public void TakeDamage(int damage)
     {
         health -= damage;
+        animator.SetTrigger("hurt");
+        PlayHurtSound();
         if (health <= 0)
         {
+            PlayDeathSound();
             Destroy(gameObject);
         }
+    }
+
+    private void PlayHurtSound()
+    {
+        GameManager.Instance.PlaySFX(hurtSound, 0.3f);
+    }
+
+    private void PlayDeathSound()
+    {
+        GameManager.Instance.PlaySFX(deathSound, 0.3f);
     }
 
 }

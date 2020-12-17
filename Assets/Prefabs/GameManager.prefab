@@ -52,6 +52,9 @@ MonoBehaviour:
   - {fileID: 570675425898545670}
   coinsText: {fileID: 570675425433069929}
   healthBar: {fileID: 570675426776235598}
+  sfxAudio: {fileID: 0}
+  musicAudio: {fileID: 0}
+  ambienceAudio: {fileID: 0}
 --- !u!1001 &2677103973109899246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,6 +171,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507811921609761184, guid: 649e5c562c245b2459b0738d310ff233,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.72024566
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507811921609761184, guid: 649e5c562c245b2459b0738d310ff233,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507811921609761184, guid: 649e5c562c245b2459b0738d310ff233,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.47058824
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 649e5c562c245b2459b0738d310ff233, type: 3}

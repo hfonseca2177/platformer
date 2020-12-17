@@ -2,7 +2,10 @@
 
 public class Gate : MonoBehaviour
 {
-    [SerializeField]private GameObject openenerKey;  
+    [SerializeField] private GameObject openenerKey;
+
+    [Header("SoundFX")]    
+    [SerializeField] private AudioClip openingGateAudio;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,8 +15,14 @@ public class Gate : MonoBehaviour
             if (gameManager.HasInventoryItem(openenerKey.name)){
                 Collectable key = gameManager.RetrieveItem(openenerKey.name);
                 gameManager.RemoveItem(key);
+                PlayOpeningGate();
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void PlayOpeningGate()
+    {
+        GameManager.Instance.PlaySFX(openingGateAudio, 0.3f);
     }
 }

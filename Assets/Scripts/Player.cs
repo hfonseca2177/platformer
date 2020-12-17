@@ -20,6 +20,14 @@ public class Player : PhysicsObject
     [Header("References")]
     [SerializeField] private GameObject attackBox;
     [SerializeField] private Animator animator;
+
+    [Header("SoundFX")]
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deathSound;
+
+
+
     //Singleton Instantiation
     private static Player instance;
     private const string instanceName = "Player Ref";
@@ -56,6 +64,7 @@ public class Player : PhysicsObject
         if (Input.GetButton(JumpKey) && grounded)
         {
             velocity.y = jumpForce;
+            PlayJumpSound();
         }
         //Flip player so attackbox flip as well in the same direction
         if (targetVelocity.x < -.01)
@@ -101,6 +110,8 @@ public class Player : PhysicsObject
 
     public void TakeDamage(int damage)
     {
+        animator.SetTrigger("hurt");
+        PlayHurtSound();
         currentHealth -= damage;
         if (currentHealth < 0)
         {
@@ -115,7 +126,9 @@ public class Player : PhysicsObject
 
     private void Die()
     {
-        SceneManager.LoadScene("Level1");
+        PlayDeathSound();
+        StartCoroutine(WaitCoroutine());
+        SceneManager.LoadSceneAsync("Level1");
     }
 
     private void UpdateHealthUI()
@@ -127,4 +140,25 @@ public class Player : PhysicsObject
     {
         transform.position = GameObject.Find("SpawnLocation").transform.position;
     }
+
+    private void PlayJumpSound()
+    {
+        GameManager.Instance.PlaySFX(jumpSound, 0.5f);
+    }
+
+    public void PlayHurtSound()
+    {
+        GameManager.Instance.PlaySFX(hurtSound, 0.3f);
+    }
+
+    public void PlayDeathSound()
+    {
+        GameManager.Instance.PlaySFX(deathSound, 0.3f);
+    }
+
+    IEnumerator WaitCoroutine()
+    {
+        yield return new WaitForSeconds(10);
+    }   
+
 }

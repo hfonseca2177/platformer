@@ -8,6 +8,11 @@ public class GameManager : InventoryManager
     public Image healthBar;
     private Vector2 healthBarOrigSize;
 
+    [Header("SoundFX")]
+    public AudioSource sfxAudio;
+    public AudioSource musicAudio;
+    public AudioSource ambienceAudio;
+
     //Singleton instantiation
     private static GameManager instance;
     private const string instanceName = "Game Manager";
@@ -45,5 +50,10 @@ public class GameManager : InventoryManager
     {
         AddCoin();
         coinsText.text = coins.ToString();
+    }
+
+    public void PlaySFX(AudioClip clip, float volume)
+    {
+        sfxAudio.PlayOneShot(clip, volume);
     }
 }

@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8286738093234840361}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.885002, y: 11.945, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingOrder: 24
   m_Sprite: {fileID: 8508441560406395044, guid: 75650ec8945da0244b7c06296f677f61,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18405126, g: 0.8301887, b: 0.81713057, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -124,3 +124,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   itemName: Blue Key
+  sfxAudioSource: {fileID: 6441570076460110750, guid: 85b6d9d1bd7335c44bb140330663532d,
+    type: 3}
+  collectedSound: {fileID: 8300000, guid: b3e8dd6a3309e4465b05bd06f1bf664a, type: 3}

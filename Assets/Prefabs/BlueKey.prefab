@@ -124,3 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   itemName: Blue Key
+  sfxAudioSource: {fileID: 0}
+  collectedSound: {fileID: 8300000, guid: b3e8dd6a3309e4465b05bd06f1bf664a, type: 3}

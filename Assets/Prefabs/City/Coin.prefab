@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5496918107815466721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.755001, y: 15.17, z: 0}
-  m_LocalScale: {x: 0.7385238, y: 0.7385238, z: 0.7385238}
+  m_LocalPosition: {x: -10.8861, y: 15.3002, z: 0}
+  m_LocalScale: {x: 0.5693876, y: 0.5693876, z: 0.5693876}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,6 +97,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   itemName: 
+  sfxAudioSource: {fileID: 6441570076460110750, guid: 85b6d9d1bd7335c44bb140330663532d,
+    type: 3}
+  collectedSound: {fileID: 8300000, guid: d999cfbb9a253479ca6833bd9e368a19, type: 3}
 --- !u!61 &6301770922746455945
 BoxCollider2D:
   m_ObjectHideFlags: 0
