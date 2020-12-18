@@ -21,10 +21,13 @@ public class Enemy : PhysicsObject
     //Current X direction Right=1 Left=-1
     private int direction = 1;
 
-    [Header("SoundFX")]    
+    [Header("SoundFX")]
     [SerializeField] private AudioClip hurtSound;
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private Animator animator;
+
+    [Header("VisualFX")]
+    [SerializeField] private ParticleSystem explosionParticleSystem;
 
     // Update is called once per frame
     void Update()
@@ -79,12 +82,15 @@ public class Enemy : PhysicsObject
 
     public void TakeDamage(int damage)
     {
+        GameManager.Instance.ShakeCamera();
         health -= damage;
         animator.SetTrigger("hurt");
         PlayHurtSound();
         if (health <= 0)
         {
             PlayDeathSound();
+            explosionParticleSystem.transform.parent = null;
+            explosionParticleSystem.gameObject.SetActive(true);
             Destroy(gameObject);
         }
     }

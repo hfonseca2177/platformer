@@ -20,6 +20,8 @@ public class Player : PhysicsObject
     [Header("References")]
     [SerializeField] private GameObject attackBox;
     [SerializeField] private Animator animator;
+    [SerializeField] private ParticleSystem dustParticleSystem;
+    
 
     [Header("SoundFX")]
     [SerializeField] private AudioClip jumpSound;
@@ -64,6 +66,7 @@ public class Player : PhysicsObject
         if (Input.GetButton(JumpKey) && grounded)
         {
             velocity.y = jumpForce;
+            dustParticleSystem.Emit(15);
             PlayJumpSound();
         }
         //Flip player so attackbox flip as well in the same direction
@@ -110,6 +113,8 @@ public class Player : PhysicsObject
 
     public void TakeDamage(int damage)
     {
+        GameManager.Instance.ShakeCamera();
+        GameManager.Instance.FreezeEffect(5, 5f);
         animator.SetTrigger("hurt");
         PlayHurtSound();
         currentHealth -= damage;
@@ -120,14 +125,15 @@ public class Player : PhysicsObject
         UpdateHealthUI();
         if (currentHealth == 0)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
-    private void Die()
+    public IEnumerator Die()
     {
         PlayDeathSound();
-        StartCoroutine(WaitCoroutine());
+        yield return new WaitForSeconds(2);
+        Spawn();
         SceneManager.LoadSceneAsync("Level1");
     }
 
@@ -156,9 +162,8 @@ public class Player : PhysicsObject
         GameManager.Instance.PlaySFX(deathSound, 0.3f);
     }
 
-    IEnumerator WaitCoroutine()
+    public bool IsAlive()
     {
-        yield return new WaitForSeconds(10);
-    }   
-
+        return currentHealth > 0;
+    }
 }

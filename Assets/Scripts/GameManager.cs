@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : InventoryManager
@@ -7,11 +8,10 @@ public class GameManager : InventoryManager
     public Text coinsText;
     public Image healthBar;
     private Vector2 healthBarOrigSize;
+    public CameraEffects cameraEffects;
 
     [Header("SoundFX")]
     public AudioSource sfxAudio;
-    public AudioSource musicAudio;
-    public AudioSource ambienceAudio;
 
     //Singleton instantiation
     private static GameManager instance;
@@ -20,7 +20,7 @@ public class GameManager : InventoryManager
     {
         get
         {
-            if (instance == null) instance = GameObject.FindObjectOfType<GameManager>();
+            if (instance == null) instance = FindObjectOfType<GameManager>();
             return instance;
         }
     }
@@ -54,6 +54,20 @@ public class GameManager : InventoryManager
 
     public void PlaySFX(AudioClip clip, float volume)
     {
-        sfxAudio.PlayOneShot(clip, volume);
+        instance.sfxAudio.PlayOneShot(clip, volume);
     }
+
+    public IEnumerator FreezeEffect(float length, float timeScale)
+    {
+        Time.timeScale = timeScale;
+        yield return new WaitForSeconds(length);
+        Time.timeScale = 1;
+
+    }
+
+    public void ShakeCamera()
+    {
+        cameraEffects.Shake(5, 5f);
+    }
+    
 }

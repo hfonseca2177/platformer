@@ -7,6 +7,7 @@ public class AnimatorFunctions : MonoBehaviour
     
     [SerializeField] private AudioClip punchAudio;
     [SerializeField] private AudioClip stepAudio;
+    [SerializeField] private ParticleSystem dustParticleSystem;
 
     public void PlayPunch(float volume)
     {
@@ -18,6 +19,9 @@ public class AnimatorFunctions : MonoBehaviour
         GameManager.Instance.PlaySFX(stepAudio, volume);
     }
 
-
+    public void EmitDustStep()
+    {
+        dustParticleSystem.Emit(10);
+    }
 
 }
